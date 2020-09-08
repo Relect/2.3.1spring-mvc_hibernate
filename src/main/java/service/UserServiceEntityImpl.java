@@ -1,5 +1,6 @@
 package service;
 
+import dao.UserDao;
 import dao.UserDaoEntityImpl;
 import model.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +13,7 @@ import java.util.List;
 @Service
 public class UserServiceEntityImpl implements UserService{
     @Autowired
-    UserDaoEntityImpl userDao;
+    UserDao userDao;
 
     @Override
     @Transactional

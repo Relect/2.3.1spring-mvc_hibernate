@@ -78,14 +78,6 @@
 <div class="content">
     <h3>Добавить пльзователя</h3>
         <form  action="#" th:action="@{/adduser}" th:object="${user}" method="post" accept-charset="utf-8">
-<!--            First Name:-->
-<!--            <input type="text" th:field="*{name}" />-->
-<!--            <br/>-->
-<!--            Last Name:-->
-<!--            <input type="text" th:field="*{email}" />-->
-<!--            <br/>-->
-<!--            <input type="submit" value="Create" />-->
-
         <input  class="form-control" type="text" name="name" required>
         <input  class="form-control" type="email" name="email" required>
         <input  class="btn" type="submit" value="Добавить">

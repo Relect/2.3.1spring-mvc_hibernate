@@ -16,9 +16,6 @@ import java.util.List;
 public class UsersController {
     @Autowired
     UserService userService;
-//    private UserService userService;
-//    public UsersController() {
-//    }
 
     @GetMapping(value = "/users")
     public String listUsers(Model model) {
@@ -46,17 +43,15 @@ public class UsersController {
     @GetMapping("edit/{id}")
     public String editUser(@PathVariable long id, Model model) {
         model.addAttribute("user",userService.getUserById(id));
-//        model.addAttribute("listUser", userService.listUsers());
         User us = userService.getUserById(id);
         userService.updateUser(us);
         return "edituser";
     }
-//    @PostMapping("/update")
-//    public String udateUser(@PathVariable long id) {
-//        User user = userService.getUserById(id);
-//        userService.updateUser(user);
-//        return "redirect:/users";
-//    }
+    @PostMapping("/edituser")
+    public String updateUseruse(@ModelAttribute User user) {
+        userService.updateUser(user);
+        return "redirect:/users";
+    }
 
 
     @GetMapping("userdata/{id}")

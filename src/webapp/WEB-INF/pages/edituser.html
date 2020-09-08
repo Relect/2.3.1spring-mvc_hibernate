@@ -6,7 +6,8 @@
 </head>
 <body>
 Привет
-<form th:action="@{/adduser}" th:object="${user}" method="post">
+<form th:action="@{/edituser}" th:object="${user}" method="post">
+    <input type="hidden" name="id" th:field="*{id}">
     <input type="text" name="name" th:field="*{name}">
     <input type="email" name="email" th:field="*{email}">
 

@@ -1,4 +1,4 @@
-package web.config;
+package config;
 
 
 import dao.UserDaoEntityImpl;
@@ -48,8 +48,8 @@ public class AppConfig {
     public LocalContainerEntityManagerFactoryBean getEntityManager() {
         LocalContainerEntityManagerFactoryBean emFactory = new LocalContainerEntityManagerFactoryBean();
         emFactory.setDataSource(getDataSource());
-        emFactory.setPersistenceProviderClass(HibernatePersistenceProvider.class);
-        emFactory.setPackagesToScan("java.model");
+//        emFactory.setPersistenceProviderClass(HibernatePersistenceProvider.class);
+        emFactory.setPackagesToScan("model");
         emFactory.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
         Properties props = new Properties();
         props.put("hibernate.show_sql", env.getProperty("hibernate.show_sql"));
