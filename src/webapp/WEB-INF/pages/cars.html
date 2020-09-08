@@ -32,11 +32,12 @@
         <caption class="table-head ">
             <p th:text="${title}"></p>
         </caption>
-        <tr  th:each="car : ${cars}" >
-            <td th:text="${car.name}" class="table-column"></td>
-            <td th:text="${car.mark}" class="table-column" ></td>
-            <td th:text="${car.year}" class="table-column"></td>
-        </tr>
+
+            <tr  th:each="car : ${cars}" >
+                <td th:text="${car.name}" class="table-column"></td>
+                <td th:text="${car.mark}" class="table-column" ></td>
+                <td th:text="${car.year}" class="table-column"></td>
+            </tr>
     </table>
 
 </body>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title th:text="${title}"></title>
+    <style>
+        .content {
+            margin: 20px 200px;
+            font-family: Arial,sans-serif;
+            border: burlywood solid 2px;
+            background-color: beige;
+        }
+        .table-head {
+            padding: 15px;
+            color: darkolivegreen;
+            font-size: large;
+        }
+        .table-column {
+            width: 150px;
+            height: 35px;
+            vertical-align: auto;
+            padding-left: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <table class="content">
+        <caption class="table-head ">
+            <p th:text="${title}"></p>
+        </caption>
+
+            <tr  th:each="car : ${cars}" >
+                <td th:text="${car.name}" class="table-column"></td>
+                <td th:text="${car.mark}" class="table-column" ></td>
+                <td th:text="${car.year}" class="table-column"></td>
+            </tr>
+    </table>
+
+</body>
+</html>
